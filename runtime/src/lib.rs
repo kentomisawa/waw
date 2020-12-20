@@ -39,6 +39,8 @@ pub use pallet_waw_core;
 /// Import the message pallet.
 pub use pallet_token_dealer;
 
+pub use pallet_parachain_info;
+
 /// An index to a block.
 pub type BlockNumber = u32;
 
@@ -84,8 +86,8 @@ impl_opaque_keys! {
 
 /// This runtime version.
 pub const VERSION: RuntimeVersion = RuntimeVersion {
-	spec_name: create_runtime_str!("parachain-template"),
-	impl_name: create_runtime_str!("parachain-template"),
+	spec_name: create_runtime_str!("waw"),
+	impl_name: create_runtime_str!("waw"),
 	authoring_version: 1,
 	spec_version: 1,
 	impl_version: 1,
@@ -229,7 +231,7 @@ impl cumulus_message_broker::Trait for Runtime {
 	type XCMPMessageHandlers = TokenDealer;
 }
 
-impl parachain_info::Trait for Runtime {}
+impl pallet_parachain_info::Trait for Runtime {}
 
 impl pallet_token_dealer::Trait for Runtime {
 	type Event = Event;
@@ -239,8 +241,8 @@ impl pallet_token_dealer::Trait for Runtime {
 	type XCMPMessageSender = MessageBroker;
 }
 
-/// Configure the pallet template in pallets/template.
-impl template::Trait for Runtime {
+/// Configure the pallet waw-core in pallets/waw-core.
+impl pallet_waw_core::Trait for Runtime {
 	type Event = Event;
 }
 
@@ -258,9 +260,9 @@ construct_runtime! {
 		ParachainUpgrade: cumulus_parachain_upgrade::{Module, Call, Storage, Inherent, Event},
 		MessageBroker: cumulus_message_broker::{Module, Call, Inherent, Event<T>},
 		TransactionPayment: pallet_transaction_payment::{Module, Storage},
-		ParachainInfo: parachain_info::{Module, Storage, Config},
+		ParachainInfo: pallet_parachain_info::{Module, Storage, Config},
 		TokenDealer: pallet_token_dealer::{Module, Call, Event<T>},
-		TemplateModule: template::{Module, Call, Storage, Event<T>},
+		WawCoreModule: pallet_waw_core::{Module, Call, Storage, Event<T>},
 	}
 }
 
