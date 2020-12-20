@@ -13,7 +13,7 @@ version = "1.3.4"
 [dependencies]
 serde = { version = "1.0.101", default-features = false, optional = true, features = ["derive"] }
 
-parachain-info = { path = "../pallets/parachain-info", version = "0.0.0", default-features = false }
+pallet-parachain-info = { path = "../pallets/parachain-info", version = "0.0.0", default-features = false }
 pallet-token-dealer = { path = "../pallets/token-dealer", version = "0.1.0", default-features = false }
 pallet-waw-core = { path = "../pallets/waw-core", version = "0.0.0", default-features = false }
 
@@ -67,8 +67,9 @@ std = [
 	"pallet-timestamp/std",
 	"pallet-sudo/std",
 	"pallet-transaction-payment/std",
-	"parachain-info/std",
+	"pallet-parachain-info/std",
 	"pallet-waw-core/std",
+    "pallet-token-dealer",
 	"cumulus/std",
 ]
 # Will be enabled by the `wasm-builder` when building the runtime for WASM.
