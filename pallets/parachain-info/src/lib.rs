@@ -6,7 +6,7 @@
 
 use frame_support::{decl_module, decl_storage, traits::Get};
 
-use cumulus_primitives::ParaId;
+use cumulus::ParaId;
 
 /// Configuration trait of this pallet.
 pub trait Trait: frame_system::Trait {}
