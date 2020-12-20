@@ -37,7 +37,7 @@ pub use sp_runtime::{Perbill, Permill};
 pub use pallet_waw_core;
 
 /// Import the message pallet.
-pub use cumulus_token_dealer;
+pub use pallet_token_dealer;
 
 /// An index to a block.
 pub type BlockNumber = u32;
@@ -225,13 +225,13 @@ impl cumulus_message_broker::Trait for Runtime {
 	type DownwardMessageHandlers = TokenDealer;
 	type UpwardMessage = cumulus_upward_message::RococoUpwardMessage;
 	type ParachainId = ParachainInfo;
-	type XCMPMessage = cumulus_token_dealer::XCMPMessage<AccountId, Balance>;
+	type XCMPMessage = pallet_token_dealer::XCMPMessage<AccountId, Balance>;
 	type XCMPMessageHandlers = TokenDealer;
 }
 
 impl parachain_info::Trait for Runtime {}
 
-impl cumulus_token_dealer::Trait for Runtime {
+impl pallet_token_dealer::Trait for Runtime {
 	type Event = Event;
 	type UpwardMessageSender = MessageBroker;
 	type UpwardMessage = cumulus_upward_message::RococoUpwardMessage;
@@ -259,7 +259,7 @@ construct_runtime! {
 		MessageBroker: cumulus_message_broker::{Module, Call, Inherent, Event<T>},
 		TransactionPayment: pallet_transaction_payment::{Module, Storage},
 		ParachainInfo: parachain_info::{Module, Storage, Config},
-		TokenDealer: cumulus_token_dealer::{Module, Call, Event<T>},
+		TokenDealer: pallet_token_dealer::{Module, Call, Event<T>},
 		TemplateModule: template::{Module, Call, Storage, Event<T>},
 	}
 }

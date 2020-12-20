@@ -14,7 +14,7 @@ version = "1.3.4"
 serde = { version = "1.0.101", default-features = false, optional = true, features = ["derive"] }
 
 parachain-info = { path = "../pallets/parachain-info", default-features = false }
-cumulus-token-dealer = { path = "../pallets/token-dealer", default-features = false }
+pallet-token-dealer = { path = "../pallets/token-dealer", version = "0.0.0", default-features = false }
 pallet-waw-core = { path = "../pallets/waw-core", version = "0.0.0", default-features = false }
 
 # Substrate dependencies
