@@ -5,6 +5,7 @@ panic = "unwind"
 members = [
     "node",
     "pallets/parachain-info",
+    "pallets/token-dealer",
     "pallets/waw-core",
     "runtime"
 ]
