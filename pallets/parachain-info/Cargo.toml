@@ -1,5 +1,5 @@
 [package]
-name = "parachain-info"
+name = "pallet-parachain-info"
 version = "0.0.0"
 authors = []
 edition = "2018"
@@ -20,14 +20,14 @@ serde = { version = "1.0.101", optional = true, features = ["derive"] }
 frame-support = { default-features = false, version = "2.0.0" }
 frame-system = { default-features = false, version = "2.0.0" }
 
-cumulus = { default-features = false, version = "0.0.6" }
+cumulus-primitives = { git = "https://github.com/paritytech/cumulus",  default-features = false, rev = '4e7f138c828bcf118df1c988a400d4dac8e904d9' }
 
 [features]
 default = ["std"]
 std = [
     "codec/std",
     "serde",
-    "cumulus/std",
+    "cumulus-primitives/std",
     "frame-support/std",
     "frame-system/std",
 ]

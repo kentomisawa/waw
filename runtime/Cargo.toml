@@ -76,7 +76,11 @@ std = [
 	"pallet-parachain-info/std",
 	"pallet-waw-core/std",
     "pallet-token-dealer/std",
-	"cumulus/std",
+	"cumulus-runtime/std",
+	"cumulus-parachain-upgrade/std",
+	"cumulus-message-broker/std",
+	"cumulus-upward-message/std",
+	"cumulus-primitives/std"
 ]
 # Will be enabled by the `wasm-builder` when building the runtime for WASM.
 runtime-wasm = [
