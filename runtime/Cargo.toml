@@ -75,7 +75,7 @@ std = [
 	"pallet-transaction-payment/std",
 	"pallet-parachain-info/std",
 	"pallet-waw-core/std",
-    "pallet-token-dealer",
+    "pallet-token-dealer/std",
 	"cumulus/std",
 ]
 # Will be enabled by the `wasm-builder` when building the runtime for WASM.
