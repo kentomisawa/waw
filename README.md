@@ -1,4 +1,4 @@
-# waw
+# RACO Protocol - Restriction Avoidable Coin Offering Protocol
 Decentralized license-free token offering protocol on blockchain
 
 ### How it works
