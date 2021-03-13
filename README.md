@@ -1,4 +1,4 @@
-# RACO Protocol - Restriction Avoidable Coin Offering Protocol
+# RACO Protocol - Regulation Avoidable Coin Offering Protocol
 Decentralized license-free token offering protocol on blockchain
 
 ### How it works
